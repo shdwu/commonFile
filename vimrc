@@ -55,3 +55,6 @@ set hls
 syntax on
 map <C-n> :NERDTreeToggle<CR>
 set shiftwidth=4 softtabstop=4 expandtab
+set history=300
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
