@@ -36,3 +36,5 @@ URxvt.scrollTtyKeypress: True
 URxvt.cursorBlink: True
 !!-------------------------
 Xft.dpi: 96
+URxvt.font: xft:monaco:size=12
+URxvt.letterSpace: -5
