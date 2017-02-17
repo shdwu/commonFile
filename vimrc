@@ -58,3 +58,12 @@ set shiftwidth=4 softtabstop=4 expandtab
 set history=300
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
+let g:NERDTreeDirArrowExpandable = '+'
+let g:NERDTreeDirArrowCollapsible = '-'
+set expandtab
+set tabstop=4
+
+nnoremap <silent> [b :bp<CR>
+nnoremap <silent> ]b :bn<CR>
+nnoremap <silent> [B :bfirst<CR>
+nnoremap <silent> ]B :blast<CR>

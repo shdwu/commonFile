@@ -36,5 +36,14 @@ URxvt.scrollTtyKeypress: True
 URxvt.cursorBlink: True
 !!-------------------------
 Xft.dpi: 96
-URxvt.font: xft:monaco:size=12
-URxvt.letterSpace: -5
+Xft.antialias: 1
+Xft.hinting: 1
+Xft.hintstyle: hintfull
+Xft.rgba: rgb
+URxvt.multichar_encoding: UTF-8
+URxvt.imLocale: zh_CN.UTF-8
+URxvt.font: xft:dejavu sans mono:size=9:antialias=true
+URxvt.boldFont: xft:dejavu sans mono:size=9:Italic:antialias=true
+URxvt.italicFont: xft:dejavu sans mono:size=9:Italic:antialia=true
+URxvt.boldItalicFont: xft:defavu sans mono:size=9:Bold Italic:antialias=true
+!!URxvt.letterSpace: -5
