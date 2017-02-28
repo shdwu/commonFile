@@ -1,6 +1,9 @@
 !!$HOME/.Xdefaults
 URxvt.background: black
 URxvt.foreground: white
+URxvt.inheritPixmap: true
+URxvt.transparent: true
+URxvt.shading: 45
 URxvt.deppth: 32
 URxvt.colorBD: white
 URxvt.colorUL: Green

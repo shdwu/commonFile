@@ -6,7 +6,7 @@
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
-PS1='[ \[\e[33;40m\]\u@\h \[\e[35;40m\]\t\[\e[30;47m\] \W \[\e[37;40m\]]\[\e[32;40m\] \$ \[\e[37;40m\]'
+PS1='[ \[\e[33m\]\u@\h \[\e[35m\]\t\[\e[30m\] \[\e[33m\]\W \[\e[37m\]]\[\e[32m\] \$ \[\e[37m\]'
 
 # My Setting
 export PATH="$PATH:~/bin"

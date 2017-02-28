@@ -170,3 +170,5 @@ client.unfocused #073642 #073642 #93a1a1 #586e75
 client.urgent #d33682 #d33682 #fdf6e3 #dc322f
 
 exec --no-startup-id fcitx
+exec --no-startup-id compton -CGb --config ~/.config/compton.conf
+exec --no-startup-id feh --bg-scale "/home/shdwu/Downloads/star-eye.jpg"
