@@ -36,6 +36,8 @@ Plugin 'marijnh/tern_for_vim'
 Plugin 'sukima/xmledit'
 Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-commentary'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 call vundle#end() " required
 filetype plugin indent on " required
 " To ignore plugin indent changes, instead use:
@@ -62,6 +64,11 @@ let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
 set expandtab
 set tabstop=4
+
+" airline settings
+let g:airline_theme = "solarized"
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 nnoremap <silent> [b :bp<CR>
 nnoremap <silent> ]b :bn<CR>
