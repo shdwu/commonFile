@@ -38,6 +38,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-commentary'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'majutsushi/tagbar'
 call vundle#end() " required
 filetype plugin indent on " required
 " To ignore plugin indent changes, instead use:
@@ -68,7 +69,19 @@ set tabstop=4
 " airline settings
 let g:airline_theme = "solarized"
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_detect_modified=1
 let g:airline_powerline_fonts = 1
+set t_Co=256
+" powerline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
+
+nnoremap  <F8> :TagbarToggle<CR>
 
 nnoremap <silent> [b :bp<CR>
 nnoremap <silent> ]b :bn<CR>
