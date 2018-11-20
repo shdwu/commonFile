@@ -152,7 +152,8 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-  status_command i3status
+  status_command $HOME/.bin/conky-i3bar.sh
+  position top 
   colors {
     separator #dc322f
     background #002b36
@@ -170,5 +171,6 @@ client.unfocused #073642 #073642 #93a1a1 #586e75
 client.urgent #d33682 #d33682 #fdf6e3 #dc322f
 
 exec --no-startup-id fcitx
-exec --no-startup-id compton -CGb --config ~/.config/compton.conf
-exec --no-startup-id feh --bg-scale "/home/shdwu/Downloads/star-eye.jpg"
+#exec --no-startup-id compton -CGb --config ~/.config/compton.conf
+#exec --no-startup-id feh --bg-scale "/home/shdwu/Downloads/star-eye.jpg"
+exec_always --no-startup-id ss.sh

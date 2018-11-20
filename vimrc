@@ -38,7 +38,9 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'majustsushi/tagbar'
 Plugin 'vim-scripts/DfrankUtil'
 Plugin 'vim-scripts/vimprj'
-Plugin 'vim-scripts/indexer.tar.gz'
+"Plugin 'vim-scripts/indexer.tar.gz'
+Plugin 'WolfgangMehner/c-support'
+Plugin 'fholgado/minibufexpl.vim'
 call vundle#end() " required
 filetype plugin indent on " required
 " To ignore plugin indent changes, instead use:
@@ -55,6 +57,7 @@ filetype plugin indent on " required
 
 set nu
 set hls
+colorscheme default
 let mapleader=";"
 filetype on
 filetype plugin on
@@ -75,15 +78,18 @@ nmap <Leader>M %
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
 set incsearch
 set ignorecase
+set smartcase
 set wildmenu
 set cursorline
 set cursorcolumn
 set nowrap
+set scrolloff=5
 " 基于缩进或语法进行代码折叠
 "set foldmethod=indent
 set foldmethod=syntax
 " 启动 vim 时关闭折叠代码
 set nofoldenable
+set swapfile
 
 syntax enable
 syntax on
@@ -112,15 +118,16 @@ let g:airline_right_alt_sep = ''
 
 nnoremap  <F8> :TagbarToggle<CR>
 
-nnoremap <silent> [b :bp<CR>
-nnoremap <silent> ]b :bn<CR>
-nnoremap <silent> [B :bfirst<CR>
-nnoremap <silent> ]B :blast<CR>
+"nnoremap <silent> [b :bp<CR>
+"nnoremap <silent> ]b :bn<CR>
+"nnoremap <silent> [B :bfirst<CR>
+"nnoremap <silent> ]B :blast<CR>
 
 " ycm settings
 let g:ycm_error_symbol = '>>'
 let g:ycm_warning_symbol = '>*'
 let g:ycm_confirm_extra_conf=0
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
@@ -148,40 +155,49 @@ let tagbar_width=32
 let g:tagbar_compact=1
 " 设置 ctags 对哪些代码标识符生成标签
 let g:tagbar_type_cpp = {
-    \ 'kinds' : [
-         \ 'c:classes:0:1',
-         \ 'd:macros:0:1',
-         \ 'e:enumerators:0:0', 
-         \ 'f:functions:0:1',
-         \ 'g:enumeration:0:1',
-         \ 'l:local:0:1',
-         \ 'm:members:0:1',
-         \ 'n:namespaces:0:1',
-         \ 'p:functions_prototypes:0:1',
-         \ 's:structs:0:1',
-         \ 't:typedefs:0:1',
-         \ 'u:unions:0:1',
-         \ 'v:global:0:1',
-         \ 'x:external:0:1'
-     \ ],
-     \ 'sro'        : '::',
-     \ 'kind2scope' : {
-         \ 'g' : 'enum',
-         \ 'n' : 'namespace',
-         \ 'c' : 'class',
-         \ 's' : 'struct',
-         \ 'u' : 'union'
-     \ },
-     \ 'scope2kind' : {
-         \ 'enum'      : 'g',
-         \ 'namespace' : 'n',
-         \ 'class'     : 'c',
-         \ 'struct'    : 's',
-         \ 'union'     : 'u'
-     \ }
-\ }
+     \ 'kinds' : [
+          \ 'c:classes:0:1',
+          \ 'd:macros:0:1',
+          \ 'e:enumerators:0:0', 
+          \ 'f:functions:0:1',
+          \ 'g:enumeration:0:1',
+          \ 'l:local:0:1',
+          \ 'm:members:0:1',
+          \ 'n:namespaces:0:1',
+          \ 'p:functions_prototypes:0:1',
+          \ 's:structs:0:1',
+          \ 't:typedefs:0:1',
+          \ 'u:unions:0:1',
+          \ 'v:global:0:1',
+          \ 'x:external:0:1'
+      \ ],
+      \ 'sro'        : '::',
+      \ 'kind2scope' : {
+          \ 'g' : 'enum',
+          \ 'n' : 'namespace',
+          \ 'c' : 'class',
+          \ 's' : 'struct',
+          \ 'u' : 'union'
+      \ },
+      \ 'scope2kind' : {
+          \ 'enum'      : 'g',
+          \ 'namespace' : 'n',
+          \ 'class'     : 'c',
+          \ 'struct'    : 's',
+          \ 'union'     : 'u'
+      \ }
+ \ }
 
 " 设置插件 indexer 调用 ctags 的参数
 " 默认 --c++-kinds=+p+l，重新设置为 --c++-kinds=+p+l+x+c+d+e+f+g+m+n+s+t+u+v
 " 默认 --fields=+iaS 不满足 YCM 要求，需改为 --fields=+iaSl
 let g:indexer_ctagsCommandLineOptions="--c++-kinds=+p+l+x+c+d+e+f+g+m+n+s+t+u+v --fields=+iaSl --extra=+q"
+
+" complie one press
+" nmap <Leader>m :wa<CR>:make<CR><CR>:cw<CR>  
+
+" 显示/隐藏 MiniBufExplorer 窗口
+ map <Leader>bl :MBEToggle<CR>
+" buffer 切换快捷键
+ map <Leader>] :MBEbn<CR>
+ map <Leader>[ :MBEbp<CR>
