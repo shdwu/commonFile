@@ -35,7 +35,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'majustsushi/tagbar'
+Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/DfrankUtil'
 Plugin 'vim-scripts/vimprj'
 "Plugin 'vim-scripts/indexer.tar.gz'
@@ -58,7 +58,7 @@ filetype plugin indent on " required
 set nu
 set hls
 colorscheme default
-let mapleader=";"
+let mapleader="\\"
 filetype on
 filetype plugin on
 nmap LB 0
@@ -201,3 +201,17 @@ let g:indexer_ctagsCommandLineOptions="--c++-kinds=+p+l+x+c+d+e+f+g+m+n+s+t+u+v 
 " buffer 切换快捷键
  map <Leader>] :MBEbn<CR>
  map <Leader>[ :MBEbp<CR>
+
+set tags+=/home/shdwu/.vim/tags/libc6
+" 语法关键字补全
+let g:ycm_seed_identifiers_with_syntax=1
+" YCM 集成 OmniCppComplete 补全引擎，设置其快捷键
+inoremap <leader>; <C-x><C-o>
+
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
