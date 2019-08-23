@@ -8,6 +8,7 @@ Plug 'morhetz/gruvbox'
 Plug 'easymotion/vim-easymotion'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+Plug 'scrooloose/nerdcommenter'
 
 call plug#end()
 
@@ -16,6 +17,8 @@ set nu
 set wildmenu
 set nowrap " 禁止折行
 let mapleader=";"
+nmap <leader>w :w<CR>
+nmap <leader>q :q<CR>
 filetype on
 filetype plugin on
 autocmd BufWritePost $MYVIMRC source $MYVIMRC " 变更.vimrc后不用重启
@@ -49,11 +52,20 @@ nmap <C-n> :NERDTreeToggle<CR>
 
 " === vim-airline settings ===
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
+nmap <leader>1 <Plug>AirlineSelectTab1<CR>
+nmap <leader>2 <Plug>AirlineSelectTab2<CR>
+nmap <leader>3 <Plug>AirlineSelectTab3<CR>
+nmap <leader>4 <Plug>AirlineSelectTab4<CR>
+nmap <leader>5 <Plug>AirlineSelectTab5<CR>
+" let g:airline_powerline_fonts = 1
 
 " === gruvbox settings ===
 colorscheme gruvbox
 set background=dark
 
 " === deoplete settings ===
-let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 2
+" use tab to forward cycle
+inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" use tab to backward cycle
+inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
