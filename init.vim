@@ -22,6 +22,10 @@ nmap <leader>q :q<CR>
 filetype on
 filetype plugin on
 autocmd BufWritePost $MYVIMRC source $MYVIMRC " 变更.vimrc后不用重启
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-h> <Backspace>
+inoremap <C-l> <Right>
 " === indention options ===
 set autoindent " 换行时自动缩进
 set expandtab " 将tab转化为空格
