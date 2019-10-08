@@ -9,6 +9,9 @@ Plug 'easymotion/vim-easymotion'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 Plug 'scrooloose/nerdcommenter'
+Plug 'mattn/emmet-vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'posva/vim-vue'
 
 call plug#end()
 
@@ -19,6 +22,7 @@ set nowrap " 禁止折行
 let mapleader=";"
 nmap <leader>w :w<CR>
 nmap <leader>q :q<CR>
+nmap <leader>e :e<CR>
 filetype on
 filetype plugin on
 autocmd BufWritePost $MYVIMRC source $MYVIMRC " 变更.vimrc后不用重启
@@ -56,6 +60,7 @@ nmap <C-n> :NERDTreeToggle<CR>
 
 " === vim-airline settings ===
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
 nmap <leader>1 <Plug>AirlineSelectTab1<CR>
 nmap <leader>2 <Plug>AirlineSelectTab2<CR>
 nmap <leader>3 <Plug>AirlineSelectTab3<CR>
@@ -73,3 +78,13 @@ let g:deoplete#enable_at_startup = 2
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 " use tab to backward cycle
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+
+" === emmet settings ===
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+
+" === indent guides settings ===
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1
+:nmap <silent> <Leader>i <Plug>IndentGuidesToggle

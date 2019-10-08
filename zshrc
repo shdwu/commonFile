@@ -57,7 +57,7 @@ antigen theme ys
 
 # default bundles
 # visit https://github.com/unixorn/awesome-zsh-plugins
-# antigen bundle git
+antigen bundle git
 # antigen bundle heroku
 antigen bundle pip
 antigen bundle autojump
@@ -154,6 +154,7 @@ bindkey '\ev' deer
 bindkey '^l' autosuggest-accept
 
 alias ll='ls -l'
+alias chrome='/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe'
 
 # options
 unsetopt correct_all
