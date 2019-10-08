@@ -66,7 +66,7 @@ nmap <leader>2 <Plug>AirlineSelectTab2<CR>
 nmap <leader>3 <Plug>AirlineSelectTab3<CR>
 nmap <leader>4 <Plug>AirlineSelectTab4<CR>
 nmap <leader>5 <Plug>AirlineSelectTab5<CR>
-" let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
 
 " === gruvbox settings ===
 colorscheme gruvbox
