@@ -12,6 +12,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'mattn/emmet-vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'posva/vim-vue'
+Plug 'tpope/vim-obsession'
 
 call plug#end()
 
