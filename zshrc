@@ -152,6 +152,7 @@ bindkey '\e[1;3B' end-of-line
 
 bindkey '\ev' deer
 bindkey '^l' autosuggest-accept
+bindkey '^h' up-line-or-search
 
 alias ll='ls -l'
 
